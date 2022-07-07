@@ -1,0 +1,10 @@
+.cart-widget{
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+}
+
+.cart-widget:hover{
+    background-color: var(--color-secundario);
+    border-radius: 50%;
+}
