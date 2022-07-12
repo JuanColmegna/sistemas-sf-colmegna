@@ -1,0 +1,4 @@
+.div-count {
+    display: flex;
+    flex-direction: row;
+}
