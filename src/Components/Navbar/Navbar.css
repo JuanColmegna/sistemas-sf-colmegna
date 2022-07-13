@@ -12,6 +12,7 @@
     align-items: center;
     flex-direction: column;
     text-align: center;
+    padding-right: 1rem;
 }
 
 @media (min-width: 480px) {
@@ -33,6 +34,7 @@
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
+    padding-left: 1rem;
 }
 
 .logo-color{

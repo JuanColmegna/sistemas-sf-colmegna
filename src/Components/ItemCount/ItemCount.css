@@ -1,4 +1,51 @@
+.div-botons {
+    width: 50%;
+    margin: 0 auto;
+}
+
+@media (min-width: 480px) {
+    .div-botons{
+        width: 30%;
+    }
+}
+
+@media (min-width: 768px) {
+    .div-botons{
+        width: 20%;
+    }
+}
+
 .div-count {
     display: flex;
     flex-direction: row;
+    gap: 1rem;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.boton-count{
+    width: 30%;
+    height: 4vh;
+    color: var(--color-blanco);
+    background-color: var(--color-secundario);
+    font-weight: bold;
+    font-family: var(--font-primaria);
+    font-size: 2rem;
+}
+
+@media (min-width: 480px) {
+    .boton-count{
+        width: 20%;
+    }
+}
+
+.boton-addto-cart {
+    width: 100%;
+    height: 4vh;
+    color: var(--color-blanco);
+    background-color: var(--color-secundario);
+    font-family: var(--font-primaria);
+    text-transform: uppercase;
 }

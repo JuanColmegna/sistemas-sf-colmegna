@@ -11,16 +11,16 @@ const ItemCount = ({stock, initial, onAdd}) => {
         numero > 0 ? setNumero(numero -1) : setNumero(numero)
     }
     return (
-        <div>
-                <div className="div-count">
+        <div className="div-botons">
+            <div className="div-count">
                 <button onClick={decrementar} className="boton-count">-</button>
                 <>
                     <Contador numero={numero}/>
                 </>
                 <button onClick={incrementar} className="boton-count">+</button>
             </div>
-            <div>
-                <button onClick={onAdd}>
+            <div className="div-add">
+                <button onClick={onAdd} className="boton-addto-cart">
                     Add to card
                 </button>
             </div>
