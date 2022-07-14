@@ -1,15 +1,30 @@
-import React from 'react'
-import ItemCount from '../ItemCount/ItemCount'
-import './ItemListContainer.css'
+import { useState, useEffect } from "react";
+import { mock } from "../../mock/mock";
+import ItemList from "./ItemList/ItemList";
 
-const ItemListContainer = ({itemList}) => {
-    return (
-        <div className='card'>
-            <>
-            <ItemCount stock={10} initial={1}/>
-            </>
-        </div>
-    );
-}
+const ItemListContainer = () => {
+const [items, setItems] = useState([]);
 
-export default ItemListContainer
+useEffect(() => {
+    const traerMock = new Promise((res) => {
+    setTimeout(() => {
+        res(mock);
+    }, 2000);
+    });
+    traerMock
+    .then((data) => {
+        setItems(data);
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+}, []);
+
+return (
+    <div className="container">
+        <ItemList items={items} />
+    </div>
+);
+};
+
+export default ItemListContainer;

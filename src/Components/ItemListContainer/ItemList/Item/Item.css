@@ -1,0 +1,29 @@
+.product {
+    margin: 1rem;
+    width: 90%;
+    max-width: 300px;
+    max-height: 520px;
+    border: solid 2px var(--color-primario);
+    text-align: center;
+    font-family: var(--font-primaria);
+    font-weight: bold;
+    line-height: 1rem;
+    box-shadow: 2px 3px 4px #00000070;
+    border-radius: 1rem;
+}
+
+.product-img {
+    width: 266px;
+    height: 266px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.product-text{
+    font-size: 1.4rem;
+}
+
+.product-stock{
+    font-size: 1.5rem;
+    color: var(--color-alert);
+}

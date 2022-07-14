@@ -3,6 +3,7 @@
   --color-primario: #343334;
   --color-secundario: #1e90ff;
   --color-blanco: #ffffff;
+  --color-alert: #f52323;
 }
 
 body {

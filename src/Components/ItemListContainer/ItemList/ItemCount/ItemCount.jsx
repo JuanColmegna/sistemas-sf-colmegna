@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Contador from "./Contador/Contador";
+import Contador from './Contador/Contador'
 import './ItemCount.css'
 
 const ItemCount = ({stock, initial, onAdd}) => {
