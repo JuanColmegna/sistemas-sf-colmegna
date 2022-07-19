@@ -1,6 +1,7 @@
 import React from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import './Item.css'
+import ItemDetailContainer from "./ItemDetailContainer/ItemDetailContainer";
 
 
 const Item = ({item}) => {
@@ -16,6 +17,7 @@ const onAdd = () => {
             <p className="product-information">Unidades disponibles: <span className="product-stock">{item.stock}</span></p>
             <p className="product-information">Precio: {item.precio}</p>
         </div>
+        <ItemDetailContainer item={item}/>
         <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
     </div>
     );

@@ -1,27 +1,27 @@
 import { useState, useEffect } from "react";
-import { mock } from "../../mock/mock";
 import ItemList from "./ItemList/ItemList";
 
 const ItemListContainer = () => {
 const [items, setItems] = useState([]);
 
 useEffect(() => {
-    const traerMock = new Promise((res) => {
-    setTimeout(() => {
-        res(mock);
-    }, 2000);
-    });
-    traerMock
-    .then((data) => {
-        setItems(data);
-    })
-    .catch((error) => {
-        console.log(error);
-    });
-}, []);
+    getProducts();
+},[]);
+
+const getProducts = async() => {
+    await fetch('https://62d4bf2c5112e98e48528887.mockapi.io/api/products')
+        .then(response => {
+        return response.json();
+        })
+        .then((nuevaRespuesta) => {
+        setItems(nuevaRespuesta)
+        })
+        .catch(error => console.log(error))
+}
+
 
 return (
-    <div className="container">
+    <div className="container item-list">
         <ItemList items={items} />
     </div>
 );

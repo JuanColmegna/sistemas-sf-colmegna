@@ -1,7 +1,9 @@
 .navBar{
     background-color: var(--color-primario);
     font-size: 2rem;
-    position: sticky;
+    position: fixed;
+    width: 100%;
+    margin-top: -4rem;
 }
 
 .contenedor {
