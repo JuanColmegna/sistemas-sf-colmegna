@@ -2,7 +2,7 @@ import React from 'react';
 import './Modal.css'
 
 
-const Modal = ({children}, estado, cambiarEstado) => {
+const Modal = ({children, estado, cambiarEstado}, elemento) => {
     return (
         <> 
         {estado &&
@@ -10,7 +10,7 @@ const Modal = ({children}, estado, cambiarEstado) => {
                 <div className='contenedor-modal'>
                     <div className='encabezado-modal'>
                         <h1 className='titulo-modal'>Título</h1>
-                        <button className='boton-cerrar'>
+                        <button onClick={() => cambiarEstado(false)} className='boton-cerrar'>
                             X
                         </button>
                     </div>

@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import Modal from '../../../../../Modal/Modal';
+import Modal from './Modal/Modal';
 import './ItemDetail.css'
 
 const ItemDetail = ({item}) => {
@@ -9,7 +9,7 @@ const[estadoModal, cambiarEstadoModal] = useState(false);
 return (
     <>
     <div className='contenedor-item-detail'>
-        <button className='boton-item-detail'>
+        <button onClick={() => cambiarEstadoModal(!estadoModal)} className='boton-item-detail'>
             Más Información
         </button>
         <Modal 
