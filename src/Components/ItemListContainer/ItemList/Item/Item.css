@@ -29,3 +29,21 @@
     font-size: 1.5rem;
     color: var(--color-alert);
 }
+
+.product-button{
+    padding: 1rem;
+    margin: 1rem;
+    text-transform: uppercase;
+    background-color: var(--color-primario);
+    font-weight: bold;
+    border-radius: .5rem;
+    border: solid 2px var(--color-blanco);
+    color: var(--color-blanco);
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.product-button:hover{
+    border: solid 2px var(--color-secundario);
+    color: var(--color-secundario);
+}

@@ -3,7 +3,19 @@
     font-size: 2rem;
     position: fixed;
     width: 100%;
-    margin-top: -4rem;
+    margin-top: -16rem;
+}
+
+@media (min-width: 480px) {
+    .navBar{
+        margin-top: -7rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .navBar{
+        margin-top: -4rem;
+    }
 }
 
 .contenedor {
@@ -45,20 +57,50 @@
 
 .list{
     list-style: none;
-    text-align: center;
     margin: 0 auto;
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+}
+
+.list-item {
+    margin: .1rem;
 }
 
 @media (min-width: 480px) {
+    .list{
+        flex-flow: row nowrap;
+        font-size: 1rem;
+    }
+
     .list-item{
         display: inline-block;
         margin-left: 1rem;
     }
 }
 
+@media (min-width: 780px) {
+    .list{
+        font-size: 1.8rem;
+    }
+}
+
+.list-ref-activo {
+    color: var(--color-blanco);
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: solid 2px var(--color-secundario);
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    border-radius: 5rem;
+    padding: 0 1rem;
+}
+
 .list-ref {
-    color: var(--color-secundario);
+    color: var(--color-blanco);
     font-family: var(--fuente-principal);
     font-weight: bold;
     text-decoration: none;
@@ -67,6 +109,7 @@
     border: none;
     cursor: pointer;
     transition: all .2s ease-in-out;
+    padding: 0 1rem;
 }
 
 .list-ref:hover{

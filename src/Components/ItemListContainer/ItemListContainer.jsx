@@ -1,29 +1,35 @@
 import { useState, useEffect } from "react";
 import ItemList from "./ItemList/ItemList";
+import { mock } from "../../mock";
+import { useParams } from "react-router-dom";
+import Loader from "../Loader/Loader";
+import './ItemListContainer.css'
 
 const ItemListContainer = () => {
 const [items, setItems] = useState([]);
+const [cargando, setCargando] = useState(true);
+const { categoria } = useParams();
 
 useEffect(() => {
-    getProducts();
-},[]);
+    const traerMock = new Promise((res) => {
+    setCargando(true)
+    setTimeout(() => {
+        res(categoria ? mock.filter(obj => obj.categoria === categoria) : mock)
+    }, 1000);
+    });
+    traerMock
+    .then((data) => {
+        setItems(data);
+        setCargando(false);
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+}, [categoria]);
 
-const getProducts = async() => {
-    await fetch('https://62d4bf2c5112e98e48528887.mockapi.io/api/products')
-        .then(response => {
-        return response.json();
-        })
-        .then((nuevaRespuesta) => {
-        setItems(nuevaRespuesta)
-        })
-        .catch(error => console.log(error))
-}
 
 
-return (
-    <div className="container item-list">
-        <ItemList items={items} />
-    </div>
+return (<>{cargando ? <Loader/> : <div className="container item-list"><ItemList items={items} /></div>}</>
 );
 };
 

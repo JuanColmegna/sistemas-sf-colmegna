@@ -1,5 +1,5 @@
-import React from 'react'
-import './Contador.css'
+import React from 'react';
+import './Contador.css';
 
 const Contador = ({numero}) => {
     return (
