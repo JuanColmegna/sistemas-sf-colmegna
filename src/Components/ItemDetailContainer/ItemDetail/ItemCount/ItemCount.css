@@ -12,10 +12,9 @@
 
 @media (min-width: 768px) {
     .div-botons{
-        width: 40%;
+        width: 60%;
     }
 }
-
 
 .div-count {
     display: flex;
@@ -35,6 +34,13 @@
     font-weight: bold;
     font-family: var(--font-primaria);
     font-size: 2rem;
+    border: none;
+    border-radius: 1rem;
+    transition: all 0.2 ease-in-out;
+}
+
+.boton-count:active{
+    transform: scale(0.93);
 }
 
 
@@ -45,4 +51,13 @@
     background-color: var(--color-secundario);
     font-family: var(--font-primaria);
     text-transform: uppercase;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: all 0.2 ease-in-out;
+}
+
+.boton-addto-cart:active{
+    transform: scale(0.93);
 }

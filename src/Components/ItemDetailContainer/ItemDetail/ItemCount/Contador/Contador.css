@@ -1,9 +1,6 @@
 .contador {
-    width: 3rem;
-    padding: 1rem;
+    padding: .5rem 1rem;
     text-align: center;
-    background-color: var(--color-primario);
     color: var(--color-blanco);
-    border-radius: 50%;
     font-size: 2rem;
 }
