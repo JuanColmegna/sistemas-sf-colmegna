@@ -8,43 +8,57 @@ export const cartContext = createContext();
 const Provider = ({children}) =>{
 
     const [cart, setCart] = useState([]);
+    const [suma, setSuma] = useState(0);
 
-    useEffect(() => {
-        console.log(cart);
-    }, [cart]);
 
+    const totalCart = (cantidad) => {
+        let suma = 0;
+        cart.forEach(item => suma += (item.precio*item.stock));
+        setSuma(suma);
+    }
+
+    
     // agrego elementos al cart
-
+    
     const addToCart = (item, cantidad) =>{
-        if(isInCart(item.id)){
-            alert('ya esta en el carrito');
+        if (isInCart(item.id)) {
+            cart.map(product => {
+                if(product.id === item.id){
+                    product.cantidad += cantidad
+                    console.log('cart', cart)
+                    setCart(cart);
+                }
+            })
         } else {
             setCart([...cart, {...item, cantidad}]);
         }
     }
-
+    
     const isInCart = (id) =>{
         return cart.some((prod) => prod.id === id)
     }
-
-    // Hago que el estado del cart pase a ser un array vacio 
-
+    
+    // funcion para eliminar todos los productos del cart
+    
     const clearCart = () =>{
         setCart([]);
     }
-
-    // Busco el index y elimino del array el item
-
-    const indexItem = (id) => {
-        cart.indexOf((item) => item.id === id)
-    };
-
-    const removeItem = (item) =>{
-        setCart(cart.splice(indexItem(item.id), 1))
+    
+    // funcion para eliminar un producto
+    
+    const deleteOne = (id) => {
+        const productosFiltrados = cart.filter((prod) => prod.id !== id);
+        setCart(productosFiltrados)
     }
+    
+    //funcion para calcular el precio (unidades * precio)
+    
+    useEffect(() => {
+        totalCart();
+    }, [cart]);
 
     return(
-        <cartContext.Provider value={{cart, addToCart, clearCart, removeItem}}>
+        <cartContext.Provider value={{cart, addToCart, clearCart, deleteOne, suma}}>
             {children}
         </cartContext.Provider>
     )

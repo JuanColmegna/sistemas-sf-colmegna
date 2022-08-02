@@ -2,8 +2,21 @@
     cursor: pointer;
     padding: .3rem;
     border-radius: 10px;
+    display: inline-block;
 }
 
 .cart-widget:hover{
     background-color: #ffffff75;
+}
+
+.enlace-cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--color-secundario);
+}
+
+.cantidad {
+    margin: 0;
 }

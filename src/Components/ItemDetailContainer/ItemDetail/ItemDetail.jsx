@@ -26,10 +26,10 @@ const ItemDetail = ({item}) => {
                         <p className='item-detail-description'><span className='item-detail-content'>Descripcion:</span> {item.description}</p>
                         <p className="item-detail-description"><span className='item-detail-content'>Marca:</span> {item.marca}</p>
                         <p className="item-detail-description"><span className='item-detail-content'>Unidades disponibles: </span><span className="item-detail-stock">{item.stock}</span></p>
-                        <p className="item-detail-price">Precio: {item.precio}</p>
+                        <p className="item-detail-price">Precio: ${item.precio}</p>
                         { cantidad === 0 
                         ? <ItemCount stock={item.stock} initial={1} onAdd={onAdd}/>
-                        : <Link className='item-detail-cart' to='/cart'>Ir al carrito</Link>
+                        : <Link className='item-detail-cart' to='/cart'>Terminar mi compra</Link>
                         }
                     </div>
                     </div>
